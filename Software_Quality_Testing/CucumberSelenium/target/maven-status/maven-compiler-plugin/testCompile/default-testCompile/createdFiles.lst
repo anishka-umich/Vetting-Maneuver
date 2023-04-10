@@ -1,0 +1,5 @@
+StepDefinitions\ChangeProductPriceSteps.class
+StepDefinitions\AddToCartSteps.class
+StepDefinitions\CustomerLoginSteps.class
+StepDefinitions\SignOutSteps.class
+StepDefinitions\TestRunner.class
