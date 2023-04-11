@@ -15,55 +15,60 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class CustomerLoginSteps {
+public class EmployeeLoginSteps {
 	WebDriver driver = null;
 	WebDriverWait wait = null;
 	String projectPath = System.getProperty("user.dir");
 	
 
 
-	@Given("customer user is on login page")
-	public void user_is_on_login_page() {
+	@Given("employee user is on login page")
+	public void employee_user_is_on_login_page() {
 		System.setProperty("webdriver.chrome.driver",projectPath+"/src/test/resources/Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 		
 		
 		driver.navigate().to("http://localhost:4200/login");
-		
 	}
 
-	@When("customer user enters customer1@email.com and {int}")
-	public void user_enters_customer1_email_com_and(Integer int1) throws InterruptedException {
-		
+	@When("employee user enters employee1@email.com and {int}")
+	public void employee_user_enters_employee1_email_com_and(Integer int1) throws InterruptedException {
 		// Enter email
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-login/div/form/div[1]/input")));
-		driver.findElement(By.xpath("/html/body/app-root/div/app-login/div/form/div[1]/input")).sendKeys("customer1@email.com");
+		driver.findElement(By.xpath("/html/body/app-root/div/app-login/div/form/div[1]/input")).sendKeys("employee1@email.com");
 		Thread.sleep(2000);
 		
 		// Enter password
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-login/div/form/div[2]/input")));
 		driver.findElement(By.xpath("/html/body/app-root/div/app-login/div/form/div[2]/input")).sendKeys(String.valueOf(int1));
-		
-		
-
 	}
 
-	@And("clicks on login button")
-	public void clicks_on_login_button() throws InterruptedException {
+	@And("clicks login button")
+	public void clicks_login_button() throws InterruptedException {
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-login/div/form/div[4]/button")));
 		driver.findElement(By.xpath("/html/body/app-root/div/app-login/div/form/div[4]/button")).click();
-
 	}
 
-	@Then("user is navigated to the home page")
-	public void user_is_navigated_to_the_home_page() throws InterruptedException {
+	@Then("employee user is navigated to the home page")
+	public void employee_user_is_navigated_to_the_home_page() throws InterruptedException {
 		Thread.sleep(2000);
-		assertTrue(driver.getPageSource().contains("Get Whatever You Want!"));
+		assertTrue(driver.getPageSource().contains("Products"));
 		driver.close();
 		driver.quit();
+	}
 
+	@When("employee user enters manager1@email.com and {int}")
+	public void employee_user_enters_manager1_email_com_and(Integer int1) throws InterruptedException {
+		// Enter email
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-login/div/form/div[1]/input")));
+		driver.findElement(By.xpath("/html/body/app-root/div/app-login/div/form/div[1]/input")).sendKeys("manager1@email.com");
+		Thread.sleep(2000);
+		
+		// Enter password
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-login/div/form/div[2]/input")));
+		driver.findElement(By.xpath("/html/body/app-root/div/app-login/div/form/div[2]/input")).sendKeys(String.valueOf(int1));
 	}
 
 }

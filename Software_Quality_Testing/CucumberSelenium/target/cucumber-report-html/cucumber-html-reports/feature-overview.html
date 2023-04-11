@@ -51,7 +51,7 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                15,
+                30,
                 0,
                 0,
                 0,
@@ -94,7 +94,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 15) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 30) / 100;
                         return tooltipLabel + ': ' + tooltipData + ' (' + tooltipPercentage + '%)';
                     }
                 }
@@ -107,7 +107,7 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                4,
+                8,
                 0
             ],
             backgroundColor: [
@@ -144,7 +144,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 4) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 8) / 100;
                         return tooltipLabel + ': ' + tooltipData + ' (' + tooltipPercentage + '%)';
                     }
                 }
@@ -157,7 +157,7 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                   4,
+                   7,
                    0
                ],
                backgroundColor: [
@@ -191,7 +191,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 4) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 7) / 100;
                         return tooltipLabel + ': ' + tooltipData + ' (' + tooltipPercentage + '%)';
                     }
                 }
@@ -233,7 +233,7 @@ $(document).ready(function() {
           <tr class="info">
             <td>CucumberSelenium</td>
                           <td>1</td>
-                        <td>09 Apr 2023, 16:40</td>
+                        <td>11 Apr 2023, 13:19</td>
           </tr>
         </tbody>
       </table>
@@ -323,6 +323,21 @@ $(document).ready(function() {
 
   <tbody>
           <tr>
+        <td class="tagname"><a href="file-src-test-resources-Features-signup-feature.html">Feature to test Sign Up functionality</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+        <td class="duration" data-value="6029899200">6s 029ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
         <td class="tagname"><a href="file-src-test-resources-Features-addtocart-feature.html">Feature to test add to cart functionality</a></td>
         
         <td  class="passed"    >1</td>
@@ -334,11 +349,11 @@ $(document).ready(function() {
         <td >0</td>
         <td >0</td>
         <td class="total">4</td>
-        <td class="duration" data-value="6948332900">6s 948ms</td>
+        <td class="duration" data-value="7173897600">7s 173ms</td>
         <td class="passed">Passed</td>
       </tr>
           <tr>
-        <td class="tagname"><a href="file-src-test-resources-Features-changeproductprice-feature.html">Feature to test change product price functionality</a></td>
+        <td class="tagname"><a href="file-src-test-resources-Features-changeprice-feature.html">Feature to test change product price functionality</a></td>
         
         <td  class="passed"    >1</td>
         <td >0</td>
@@ -349,7 +364,7 @@ $(document).ready(function() {
         <td >0</td>
         <td >0</td>
         <td class="total">4</td>
-        <td class="duration" data-value="11890750400">11s 890ms</td>
+        <td class="duration" data-value="12172699900">12s 172ms</td>
         <td class="passed">Passed</td>
       </tr>
           <tr>
@@ -364,7 +379,37 @@ $(document).ready(function() {
         <td >0</td>
         <td >0</td>
         <td class="total">4</td>
-        <td class="duration" data-value="7672516600">7s 672ms</td>
+        <td class="duration" data-value="7718506000">7s 718ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="file-src-test-resources-Features-employeelogin-feature.html">Feature to test employee login functionality</a></td>
+        
+        <td  class="passed"    >2</td>
+        <td >0</td>
+        <td class="total">2</td>
+        <td      class="passed"    >8</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">8</td>
+        <td class="duration" data-value="15490360900">15s 490ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="file-src-test-resources-Features-viewallorders-feature.html">Feature to test managers can view all orders</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="5796464100">5s 796ms</td>
         <td class="passed">Passed</td>
       </tr>
           <tr>
@@ -379,24 +424,24 @@ $(document).ready(function() {
         <td >0</td>
         <td >0</td>
         <td class="total">3</td>
-        <td class="duration" data-value="7806927300">7s 806ms</td>
+        <td class="duration" data-value="7885241500">7s 885ms</td>
         <td class="passed">Passed</td>
       </tr>
       </tbody>
 
   <tfoot class="total">
     <tr>
-      <td>4</td>
-            <td>4</td>
+      <td>7</td>
+            <td>8</td>
       <td>0</td>
-      <td>4</td>
-      <td>15</td>
-      <td>0</td>
-      <td>0</td>
+      <td>8</td>
+      <td>30</td>
       <td>0</td>
       <td>0</td>
-      <td>15</td>
-      <td class="duration">34s 318ms</td>
+      <td>0</td>
+      <td>0</td>
+      <td>30</td>
+      <td class="duration">1m 2s 267ms</td>
       <td></td>
     </tr>
     <tr>
