@@ -14,49 +14,45 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class SignOutSteps {
+public class ManagerViewOrdersSteps {
 	WebDriver driver = null;
 	WebDriverWait wait = null;
 	String projectPath = System.getProperty("user.dir");
-	
 
 	
-	@Given("user is logged into the application")
-	public void user_is_logged_into_the_application() throws InterruptedException {
+	@Given("manager user is logged in")
+	public void manager_user_is_logged_in() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver",projectPath+"/src/test/resources/Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 		
-		// Open the application and log in
 		driver.navigate().to("http://localhost:4200/login");
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-login/div/form/div[1]/input")));
+		
 		// Enter email
-		driver.findElement(By.xpath("/html/body/app-root/div/app-login/div/form/div[1]/input")).sendKeys("employee1@email.com");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-login/div/form/div[1]/input")));
+		driver.findElement(By.xpath("/html/body/app-root/div/app-login/div/form/div[1]/input")).sendKeys("manager1@email.com");
 		Thread.sleep(2000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-login/div/form/div[2]/input")));
+		
 		// Enter password
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-login/div/form/div[2]/input")));
 		driver.findElement(By.xpath("/html/body/app-root/div/app-login/div/form/div[2]/input")).sendKeys("123");
+		
+		// Click login
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-login/div/form/div[4]/button")));
 		driver.findElement(By.xpath("/html/body/app-root/div/app-login/div/form/div[4]/button")).click();
+	}
+
+	@When("manager user clicks orders")
+	public void manager_user_clicks_orders() throws InterruptedException{
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-navigation/nav/div/div/a[1]")));
+		driver.findElement(By.xpath("/html/body/app-root/div/app-navigation/nav/div/div/a[1]")).click();
 		Thread.sleep(2000);
 	}
 
-	@When("user clicks Sign Out")
-	public void user_clicks_sign_out() {
-		// Wait for Sign Out to load and click it
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-navigation/nav/div/div/a[3]")));
-		driver.findElement(By.xpath("/html/body/app-root/div/app-navigation/nav/div/div/a[3]")).click();
-	
-	    
-	}
-
-	@Then("user is navigated to the Sign In page")
-	public void user_is_navigated_to_the_sign_in_page() throws InterruptedException {
-		
-		assertTrue(driver.getPageSource().contains("Sign In") && driver.getPageSource().contains("You have been logged out."));
-		Thread.sleep(2000);
+	@Then("manager user is navigated to the orders page")
+	public void manager_user_is_navigated_to_the_orders_page(){
+		assertTrue(driver.getPageSource().contains("Orders"));
 		driver.close();
 		driver.quit();
 	}
-
 }

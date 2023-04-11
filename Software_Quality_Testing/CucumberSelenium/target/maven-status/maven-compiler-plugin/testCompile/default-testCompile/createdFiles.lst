@@ -1,5 +1,8 @@
 StepDefinitions\ChangeProductPriceSteps.class
-StepDefinitions\AddToCartSteps.class
+StepDefinitions\SignUpSteps.class
 StepDefinitions\CustomerLoginSteps.class
 StepDefinitions\SignOutSteps.class
 StepDefinitions\TestRunner.class
+StepDefinitions\AddToCartSteps.class
+StepDefinitions\EmployeeLoginSteps.class
+StepDefinitions\ManagerViewOrdersSteps.class

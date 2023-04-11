@@ -69,8 +69,6 @@ public class ChangeProductPriceSteps {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-product/table/tbody/tr[1]/td[5]")));
 		WebElement productPagePrice = driver.findElement(By.xpath("/html/body/app-root/div/app-product/table/tbody/tr[1]/td[5]"));
 		String productPagePriceString = productPagePrice.getText();
-		/*System.out.println("productPagePrice: " + productPagePrice.getText());
-		System.out.println("newPrice: " + "$"+newPrice.toString()+ ".00");*/
 		driver.close();
 		driver.quit();
 		
