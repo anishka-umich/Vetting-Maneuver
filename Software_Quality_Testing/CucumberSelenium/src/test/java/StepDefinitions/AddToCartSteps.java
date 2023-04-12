@@ -55,8 +55,8 @@ public class AddToCartSteps {
 
 	@Then("user is navigated to My Cart with appropriate item added")
 	public void user_is_navigated_to_my_cart_with_appropriate_item_added() throws InterruptedException {
-		assertTrue(driver.getPageSource().contains("Core Java") && driver.getPageSource().contains("My Cart"));
 		Thread.sleep(2000);
+		assertTrue(driver.getPageSource().contains("Core Java") && driver.getPageSource().contains("My Cart"));
 		driver.close();
 		driver.quit();
 	}
