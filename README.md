@@ -9,6 +9,11 @@ To run Selenium:
 4. Make sure the Online Shopping Store application is running locally on your machine
 5. Right-click the CucumberSelenium project and do Run As JUnit Test
 
+To generate Maven Cucumber Report (Windows):
+1. Make sure the Online Shopping Store application is running locally on your machine
+2. In your terminal, change to the CucumberSelenium directory
+3. Run "mvn clean verify" without any quotes and the report will be generated in target/cucumber-report-html/cucumber-html-reports/
+
 
 Angular test
 1. DownLoad the frontend project in visual studio
